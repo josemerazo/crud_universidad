@@ -3,6 +3,7 @@ include_once("conexion.php");
 
 include_once("funciones.php");
 
+include('header.php');
 $carreras = lista_carreras($servername, $username, $password, $dbname);
 
 
@@ -19,29 +20,37 @@ if (isset($_POST["grabar"])) {
         $_POST["carrera"]
     );
 }
+$estudiante = [];
+if (isset($_GET["id"])) {
+    $estudiante = obtiene_estudiante(
+        $servername,
+        $username,
+        $password,
+        $dbname,
+        $_GET["id"]
+    );
+}
+$nombre = isset($estudiante["nombre"]) ? $estudiante["nombre"] : "";
+$apellido = isset($estudiante["apellido"]) ? $estudiante["apellido"] : "";
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<form method="post" action="form_estudiante.php">
+    <div class="container">
+        <h2>Ingresos de Estudiante U</h2>
+        <label for="cedula">Cedula</label>
+        <input required id="cedula" class="form-control" name="cedula" /><br>
 
-<body>
-    <h2>Ingresos de Estudiante U</h2>
-    <form method="post" action="form_estudiante.php">
-        <label for="cedula">Cedula</label> <input required id="cedula" name="cedula" /><br>
-        <label for="nombre">Nombre</label> <input id="nombre" name="nombre" /><br>
-        <label for="apellido">Apellido</label> <input id="apellido" name="apellido" /><br>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" class="form-control" value="<?php echo $nombre; ?>" name="nombre" /><br>
 
+        <label for="apellido">Apellido</label>
+        <input id="apellido" class="form-control" name="apellido"  value="<?php echo $apellido; ?>"/><br>
 
-        <label for="correo">Correo</label> <input type="email" id="correo" name="correo" /><br>
+        <label for="correo">Correo</label>
+        <input type="email" class="form-control" id="correo" name="correo" /><br>
 
         <label for="carrera">Carrera</label>
-        <select id="carrera" name="carrera">
+        <select id="carrera" name="carrera" class="form-control">
             <?php
             foreach ($carreras as $elemento) {
                 echo "<option value='" . $elemento['id'] . "'>" . $elemento['nombre'] . "</option>";
@@ -50,8 +59,9 @@ if (isset($_POST["grabar"])) {
         </select>
         <br>
         <br>
-        <input type="submit" value="Grabar" name="grabar"></input>
-    </form>
-</body>
-
-</html>
+        <input type="submit" value="Grabar" class="btn btn-success" name="grabar"></input>
+    </div>
+</form>
+<?php
+include('footer.php');
+?>
