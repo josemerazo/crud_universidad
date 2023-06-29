@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-06-2023 a las 01:01:19
+-- Tiempo de generación: 30-06-2023 a las 00:54:58
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -64,12 +64,14 @@ CREATE TABLE `estudiante` (
 
 INSERT INTO `estudiante` (`id`, `cedula`, `nombre`, `apellido`, `correo`, `id_carrera`) VALUES
 (1, 921992665, 'JOSE MIGUEL', '0', 'jose.erazo@cu.ucsg.edu.ec', 8),
-(2, 91226564, 'JOSE FERNANDO', 'ERAZO LEON', 'jose.erazo.ayon@hotmail.com', 8),
+(2, 91226564, 'JOSE RICARDO', 'ERAZO LEON', 'jose.erazo.ayon@hotmail.com', 2),
 (3, 931919104, 'MICHAELT JOEL', 'SANCHEZ BARRETO', 'joel.sanchez@cu.ucsg.edu.ec', 8),
 (4, 958178428, 'MARIO ENRIQUE', 'BURGOS CALLE', 'mario.burgos01@cu.ucsg.edu.ec', 8),
 (5, 931919104, 'MICHAELT JOEL', 'SANCHEZ BARRETO', 'joel.sanchez@cu.ucsg.edu.ec', 8),
 (6, 921992665, 'JOSE MIGUEL', 'ERAZO AYON', 'jose.erazo.ayon@hotmail.com', 8),
-(7, 961226796, 'HUGO MARTIN', 'ROBAYO GONZALEZ', 'hugo.robayo@hotmail.com', 8);
+(7, 961226796, 'HUGO MARTIN', 'ROBAYO GONZALEZ', 'hugo.robayo@hotmail.com', 8),
+(8, 921992665, 'HUGO FABRICIO', 'SERRANO', 'jose.erazo@cu.ucsg.edu.ec', 1),
+(9, 91226564, 'JOSE FERNANDOa', 'ERAZO LEON', 'jose.erazo.ayon@hotmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -128,7 +130,7 @@ ALTER TABLE `carrera`
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `facultad`
