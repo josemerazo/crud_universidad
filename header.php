@@ -11,7 +11,7 @@
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="https://scontent.fuio13-1.fna.fbcdn.net/v/t39.30808-1/265531800_10160353433558623_5462775808889134294_n.jpg?stp=dst-jpg_p148x148&_nc_cat=1&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=gesT-TdG7qIAX-hkWe-&_nc_ht=scontent.fuio13-1.fna&oh=00_AfCfrKvxeknDF9IEW1P6Hsg_UlulpNavNF4549gFjcr0MQ&oe=649A170A" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="img/logo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 UCSG
             </a>
             <a class="navbar-brand" href="#">Navbar</a>

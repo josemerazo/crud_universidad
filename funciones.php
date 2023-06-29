@@ -82,3 +82,38 @@ function obtiene_estudiante($servername, $username, $password, $dbname, $id)
     $conn->close();
     return $estudiante;
 }
+function actualizar_estudiante(
+    $servername,
+    $username,
+    $password,
+    $dbname,
+    $id,
+    $cedula,
+    $nombre,
+    $apellido,
+    $correo,
+    $id_carrera = 1
+) {
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "UPDATE estudiante SET "
+        . " cedula = '" . $cedula   . "', "
+        . " nombre = '" . $nombre   . "', "
+        . " correo = '" . $correo   . "', "
+        . " apellido = '" . $apellido   . "', "
+        . " id_carrera = " . $id_carrera   . " "
+        . " WHERE id = " .  $id;
+        
+
+    if ($conn->query($sql) === TRUE) {
+        echo "record updated successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
